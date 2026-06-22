@@ -8,7 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity(name = "CART")
-public class Cart {
+public class ShoppingCart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,7 +18,7 @@ public class Cart {
     @JoinColumn(name = "customer_id")
     private User customer;
 
-    public Cart() {
+    public ShoppingCart() {
     }
 
     public int getId() {

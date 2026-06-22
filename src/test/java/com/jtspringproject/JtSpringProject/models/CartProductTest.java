@@ -7,20 +7,19 @@ class CartProductTest {
 
     @Test
     void testConstructorAndGetters() {
-        // Mocking simple Cart and Product objects with IDs
-        Cart cart = new Cart();
-        cart.setId(1);
+        ShoppingCart shoppingCart = new ShoppingCart();
+        shoppingCart.setId(1);
 
         Product product = new Product();
         product.setId(100);
 
-        CartProduct cartProduct = new CartProduct(cart, product);
+        CartProduct cartProduct = new CartProduct(shoppingCart, product);
 
         assertNotNull(cartProduct.getId(), "CartProductId should not be null");
         assertEquals(1, cartProduct.getId().getCartId(), "Cart ID should match");
         assertEquals(100, cartProduct.getId().getProductId(), "Product ID should match");
 
-        assertEquals(cart, cartProduct.getCart(), "Cart should match");
+        assertEquals(shoppingCart, cartProduct.getShoppingCart(), "ShoppingCart should match");
         assertEquals(product, cartProduct.getProduct(), "Product should match");
     }
 
@@ -28,19 +27,19 @@ class CartProductTest {
     void testSetters() {
         CartProduct cartProduct = new CartProduct();
 
-        Cart cart = new Cart();
-        cart.setId(2);
+        ShoppingCart shoppingCart = new ShoppingCart();
+        shoppingCart.setId(2);
 
         Product product = new Product();
         product.setId(200);
 
-        cartProduct.setCart(cart);
+        cartProduct.setShoppingCart(shoppingCart);
         cartProduct.setProduct(product);
-        cartProduct.setId(new CartProductId(cart.getId(), product.getId()));
+        cartProduct.setId(new CartProductId(shoppingCart.getId(), product.getId()));
 
         assertEquals(2, cartProduct.getId().getCartId());
         assertEquals(200, cartProduct.getId().getProductId());
-        assertEquals(cart, cartProduct.getCart());
+        assertEquals(shoppingCart, cartProduct.getShoppingCart());
         assertEquals(product, cartProduct.getProduct());
     }
 }
