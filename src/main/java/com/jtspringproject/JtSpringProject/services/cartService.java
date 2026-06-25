@@ -17,19 +17,19 @@ public class cartService {
         this.cartDao = cartDao;
     }
 
-    public Cart addCart(Cart cart) {
-        return cartDao.addCart(cart);
+    public Cart addCart(Cart shoppingCart) {
+        return cartDao.addCart(shoppingCart);
     }
 
     public List<Cart> getCarts() {
         return this.cartDao.getCarts();
     }
 
-    public void updateCart(Cart cart) {
-        cartDao.updateCart(cart);
+    public void updateCart(Cart shoppingCart) {
+        cartDao.updateCart(shoppingCart);
     }
 
-    public void deleteCart(Cart cart) {
-        cartDao.deleteCart(cart);
+    public void deleteCart(Cart shoppingCart) {
+        cartDao.deleteCart(shoppingCart);
     }
 }

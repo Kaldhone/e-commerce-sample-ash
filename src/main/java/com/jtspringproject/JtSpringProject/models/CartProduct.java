@@ -12,7 +12,7 @@ public class CartProduct {
     @ManyToOne
     @MapsId("cartId")
     @JoinColumn(name = "cart_id")
-    private Cart cart;
+    private Cart shoppingCart;
 
     @ManyToOne
     @MapsId("productId")
@@ -21,10 +21,10 @@ public class CartProduct {
 
     public CartProduct() {}
 
-    public CartProduct(Cart cart, Product product) {
-        this.cart = cart;
+    public CartProduct(Cart shoppingCart, Product product) {
+        this.shoppingCart = shoppingCart;
         this.product = product;
-        this.id = new CartProductId(cart.getId(), product.getId());
+        this.id = new CartProductId(shoppingCart.getId(), product.getId());
     }
 
     public CartProductId getId() {
@@ -36,11 +36,11 @@ public class CartProduct {
     }
 
     public Cart getCart() {
-        return cart;
+        return shoppingCart;
     }
 
-    public void setCart(Cart cart) {
-        this.cart = cart;
+    public void setCart(Cart shoppingCart) {
+        this.shoppingCart = shoppingCart;
     }
 
     public Product getProduct() {
