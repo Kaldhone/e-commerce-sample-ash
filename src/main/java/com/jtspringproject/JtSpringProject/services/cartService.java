@@ -2,7 +2,7 @@ package com.jtspringproject.JtSpringProject.services;
 
 import java.util.List;
 
-import com.jtspringproject.JtSpringProject.dao.cartDao;
+import com.jtspringproject.JtSpringProject.dao.shoppingCartDao;
 import com.jtspringproject.JtSpringProject.models.Cart;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,26 +10,26 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class cartService {
-    private final cartDao cartDao;
+    private final shoppingCartDao shoppingCartDao;
 
     @Autowired
-    public cartService(cartDao cartDao) {
-        this.cartDao = cartDao;
+    public cartService(shoppingCartDao shoppingCartDao) {
+        this.shoppingCartDao = shoppingCartDao;
     }
 
     public Cart addCart(Cart cart) {
-        return cartDao.addCart(cart);
+        return shoppingCartDao.addCart(cart);
     }
 
     public List<Cart> getCarts() {
-        return this.cartDao.getCarts();
+        return this.shoppingCartDao.getCarts();
     }
 
     public void updateCart(Cart cart) {
-        cartDao.updateCart(cart);
+        shoppingCartDao.updateCart(cart);
     }
 
     public void deleteCart(Cart cart) {
-        cartDao.deleteCart(cart);
+        shoppingCartDao.deleteCart(cart);
     }
 }
