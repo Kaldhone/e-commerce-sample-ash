@@ -8,10 +8,10 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-public class cartDao {
+public class shoppingCartDao {
     private final SessionFactory sessionFactory;
 
-    public cartDao(SessionFactory sessionFactory) {
+    public shoppingCartDao(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
